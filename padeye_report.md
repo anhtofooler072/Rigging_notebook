@@ -24,10 +24,7 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 - Distance Between Stiffener Centers: $H_s = 478\ \mathrm{mm}$
 - Sling Load: $S_l = 86\ \mathrm{MT}$
 - Acceleration due to Gravity: $g = 9.81\ \mathrm{m/s^2}$
-- Calculated Sling Load:
-  $$
-  SSL = S_l \times g \times 1,000 = 86 \times 9.81 \times 1,000 = 843,660\ \mathrm{N}
-  $$
+- Calculated Sling Load: $SSL = S_l \times g \times 1,000 = 86 \times 9.81 \times 1,000 = 843,660\ \mathrm{N}$
 
 ## 3. Geometric Checks
 
@@ -35,66 +32,36 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 
 - Pin Diameter: $d = 95\ \mathrm{mm}$
 - Hole Diameter: $D = 100\ \mathrm{mm}$
-- Clearance:
-  $$
-  C_1 = D - d = 100 - 95 = 5\ \mathrm{mm}
-  $$
+- Clearance: $C_1 = D - d = 100 - 95 = 5\ \mathrm{mm}$
 
 ### 3.2 Clearance Between Shackle Jaw and Plate
 
 - Shackle Jaw Opening: $B = 147\ \mathrm{mm}$
 - Total Plate Thickness: $t_p = 100\ \mathrm{mm}$
-- Clearance:
-  $$
-  C_2 = \frac{B - t_p}{2} = \frac{147 - 100}{2} = 23.5\ \mathrm{mm}
-  $$
+- Clearance: $C_2 = \frac{B - t_p}{2} = \frac{147 - 100}{2} = 23.5\ \mathrm{mm}$
 
 ### 3.3 Sling Clearance
 
-- Sling Clearance:
-  $$
-  SC = H - (D_s + R_p - 0.5 \cdot d) = 329 - (80 + 200 - 0.5 \times 100) = 329 - 280 = 49\ \mathrm{mm}
-  $$
+- Sling Clearance: $SC = H - (D_s + R_p - 0.5 \cdot d) = 329 - (80 + 200 - 0.5 \times 100) = 329 - 280 = 49\ \mathrm{mm}$
 
 ### 3.4 Minimum and Maximum Hole Sizes
 
-- Minimum Hole:
-  $$
-  \text{Minimum Hole} = \max(D + 3.18,\ 1.05 \cdot D) = \max(95 + 3.18,\ 1.05 \times 95) = \max(98.18,\ 99.75) = 99.75\ \mathrm{mm}
-  $$
-- Maximum Hole:
-  $$
-  \text{Maximum Hole} = D + 9.53 = 95 + 9.53 = 104.53\ \mathrm{mm}
-  $$
+- Minimum Hole: $\text{Minimum Hole} = \max(D + 3.18,\ 1.05 \cdot D) = \max(95 + 3.18,\ 1.05 \times 95) = \max(98.18,\ 99.75) = 99.75\ \mathrm{mm}$
+- Maximum Hole: $\text{Maximum Hole} = D + 9.53 = 95 + 9.53 = 104.53\ \mathrm{mm}$
 
 ### 3.5 Minimum and Maximum Clearances
 
-- Minimum Clearance:
-  $$
-  \text{Minimum Clearance} = 0.05 \times t_p = 0.05 \times 100 = 5\ \mathrm{mm}
-  $$
-- Maximum Clearance:
-  $$
-  \text{Maximum Clearance} = \max(0.1 \times t_p,\ 20) = \max(10,\ 20) = 20\ \mathrm{mm}
-  $$
+- Minimum Clearance: $\text{Minimum Clearance} = 0.05 \times t_p = 0.05 \times 100 = 5\ \mathrm{mm}$
+- Maximum Clearance: $\text{Maximum Clearance} = \max(0.1 \times t_p,\ 20) = \max(10,\ 20) = 20\ \mathrm{mm}$
 
 ## 4. Bearing Stress Check
 
 - Applied Load: $F = SSL = 843,660\ \mathrm{N}$
 - Padeye Hole Diameter: $d = 100\ \mathrm{mm}$
 - Main Plate Thickness: $t = 40\ \mathrm{mm}$
-- Bearing Stress:
-  $$
-  \sigma_b = \frac{F}{d \cdot t} = \frac{843,660}{100 \times 40} = 210.92\ \mathrm{MPa}
-  $$
-- Permissible Bearing Stress:
-  $$
-  \sigma_{b,\text{perm}} = 0.9 \times F_y = 0.9 \times 345 = 310.5\ \mathrm{MPa}
-  $$
-- Check:
-  $$
-  210.92\ \mathrm{MPa} < 310.5\ \mathrm{MPa} \implies \text{PASS}
-  $$
+- Bearing Stress: $\sigma_b = \frac{F}{d \cdot t} = \frac{843,660}{100 \times 40} = 210.92\ \mathrm{MPa}$
+- Permissible Bearing Stress: $\sigma_{b,\text{perm}} = 0.9 \times F_y = 0.9 \times 345 = 310.5\ \mathrm{MPa}$
+- Check: $210.92\ \mathrm{MPa} < 310.5\ \mathrm{MPa} \implies \text{PASS}$
 
 ## 5. Shear Stress Check (Pin Hole Through Main/Cheek Plate)
 
@@ -105,27 +72,11 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 - Main Plate Thickness: $t = 40\ \mathrm{mm}$
 - Cheek Plate Thickness: $t_c = 30\ \mathrm{mm}$
 - Resisting Area:
-  $$
-  A_{p1} = (R_p - \frac{d}{2}) \times 2t + (R_c - \frac{d}{2}) \times 4t_c
-  $$
-  $$
-  A_{p1} = (200 - 50) \times 2 \times 40 + (160 - 50) \times 4 \times 30
-  $$
-  $$
-  A_{p1} = 150 \times 80 + 110 \times 120 = 12,000 + 13,200 = 25,200\ \mathrm{mm}^2
-  $$
-- Shear Stress:
-  $$
-  \sigma_s = \frac{F}{A_{p1}} = \frac{843,660}{25,200} = 33.49\ \mathrm{MPa}
-  $$
-- Permissible Shear Stress:
-  $$
-  \sigma_{s,\text{perm}} = 0.4 \times F_y = 0.4 \times 345 = 138\ \mathrm{MPa}
-  $$
-- Check:
-  $$
-  33.49\ \mathrm{MPa} < 138\ \mathrm{MPa} \implies \text{PASS}
-  $$
+> $A_{p1} = (R_p - \frac{d}{2}) \times 2t + (R_c - \frac{d}{2}) \times 4t_c
+  = 25,200\ \mathrm{mm}^2$
+- Shear Stress: $\sigma_s = \frac{F}{A_{p1}} = \frac{843,660}{25,200} = 33.49\ \mathrm{MPa}$
+- Permissible Shear Stress: $\sigma_{s,\text{perm}} = 0.4 \times F_y = 0.4 \times 345 = 138\ \mathrm{MPa}$
+- Check: $33.49\ \mathrm{MPa} < 138\ \mathrm{MPa} \implies \text{PASS}$
 
 ## 6. Summary Table
 
