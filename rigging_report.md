@@ -71,8 +71,8 @@ The total compressive stress on the spreader bar is **75.01 T**.
 | 2             | 41.97    |
 | 3             | 31.48    |
 | 4             | 32.81    |
-| Pu 1          | 76.55    |
-| Pu 2          | 73.45    |
+| 5          | 73.45    |
+| 6          | 76.55    |
 
 ### Tension of the Slings
 
@@ -82,16 +82,8 @@ The total compressive stress on the spreader bar is **75.01 T**.
 | 2         | 44.13       | 72        |
 | 3         | 34.20       | 67        |
 | 4         | 35.64       | 67        |
-| Slu2      | 82.44       | 63        |
-| Slu1      | 85.91       | 63        |
-
-### Upper Sling and Hook Load
-
-| Component    | Load (T) |
-| ------------ | -------- |
-| Slu2 Tension | 82.44    |
-| Slu1 Tension | 85.91    |
-| Hook Load    | 159.99   |
+| 5      | 82.44       | 63        |
+| 6      | 85.91       | 63        |
 
 ### Compressive Stress on Spreader Bar
 
