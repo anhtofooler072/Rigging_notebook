@@ -105,9 +105,7 @@ The critical buckling load of the spreader bar is calculated as follows:
 
 The moment of inertia for a hollow circular section:
 
-- $
-I = \frac{\pi}{64} (D_o^4 - D_i^4)
-$
+- $I = \frac{\pi}{64} (D_o^4 - D_i^4)$
 
 Where:
 
