@@ -4,6 +4,9 @@
 
 This report summarizes the padeye design checks, including geometric, bearing, and shear stress verifications, using the provided dimensions and material properties. All calculations are shown in plain text and equations for clarity.
 
+### Padeye design details
+![alt text](image-1.png)
+
 ## 2. Input Data
 
 - Shackle Pin Diameter: $D = 95\ \mathrm{mm}$
@@ -64,7 +67,7 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 - Check: $210.92\ \mathrm{MPa} < 310.5\ \mathrm{MPa} \implies \text{PASS}$
 
 ## 5. Shear Stress Check (Pin Hole Through Main/Cheek Plate)
-
+![alt text](image-2.png)
 - Applied Load: $F = SSL = 843,660\ \mathrm{N}$
 - Main Plate Radius: $R_p = 200\ \mathrm{mm}$
 - Cheek Plate Radius: $R_c = 160\ \mathrm{mm}$
