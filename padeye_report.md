@@ -5,6 +5,7 @@
 This report summarizes the padeye design checks, including geometric, bearing, and shear stress verifications, using the provided dimensions and material properties. All calculations are shown in plain text and equations for clarity.
 
 ### Padeye design details
+
 ![alt text](image-1.png)
 
 ## 2. Input Data
@@ -67,7 +68,9 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 - Check: $210.92\ \mathrm{MPa} < 310.5\ \mathrm{MPa} \implies \text{PASS}$
 
 ## 5. Shear Stress Check (Pin Hole Through Main/Cheek Plate)
+
 ![alt text](image-2.png)
+
 - Applied Load: $F = SSL = 843,660\ \mathrm{N}$
 - Main Plate Radius: $R_p = 200\ \mathrm{mm}$
 - Cheek Plate Radius: $R_c = 160\ \mathrm{mm}$
@@ -75,7 +78,7 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 - Main Plate Thickness: $t = 40\ \mathrm{mm}$
 - Cheek Plate Thickness: $t_c = 30\ \mathrm{mm}$
 - Resisting Area:
-> $A_{p1} = (R_p - \frac{d}{2}) \times 2t + (R_c - \frac{d}{2}) \times 4t_c
+  > $A_{p1} = (R_p - \frac{d}{2}) \times 2t + (R_c - \frac{d}{2}) \times 4t_c
   = 25,200\ \mathrm{mm}^2$
 - Shear Stress: $\sigma_s = \frac{F}{A_{p1}} = \frac{843,660}{25,200} = 33.49\ \mathrm{MPa}$
 - Permissible Shear Stress: $\sigma_{s,\text{perm}} = 0.4 \times F_y = 0.4 \times 345 = 138\ \mathrm{MPa}$
@@ -93,3 +96,67 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 ## 7. Conclusion
 
 All checks except the shackle jaw clearance ($C_2$) are within permissible limits. The clearance between the shackle jaw and the plate exceeds the maximum allowed value and should be reviewed in the design.
+
+## 8. Spreader Bar Critical Stress
+
+The critical buckling load of the spreader bar is calculated as follows:
+
+### Step 1: Moment of Inertia
+
+The moment of inertia for a hollow circular section:
+
+- $
+I = \frac{\pi}{64} (D_o^4 - D_i^4)
+$
+
+Where:
+
+- $D_o$ = Outer diameter = 588 mm
+- $t$ = Thickness = 25 mm
+- $D_i = D_o - 2t = 588 - 2 \times 25 = 538\ mm$
+
+So,
+
+- $
+I = \frac{\pi}{64} (588^4 - (588-2 \times 25)^4) = 1.75 \times 10^9\ \mathrm{mm}^4
+$
+
+### Step 2: Radius of Gyration
+
+- $
+r = \sqrt{\frac{I}{A}}
+$
+
+Where:
+
+- $
+A = \frac{\pi}{4} (D_o^2 - D_i^2)
+$
+
+### Step 3: Euler's Critical Buckling Load
+
+The critical buckling load for a pinned-pinned column:
+
+- $
+P_{cr} = \frac{\pi^2 E I}{(K L)^2}
+$ 
+
+Where:
+
+- $E = 210,000 \  \mathrm{MPa}$
+- $K$ = 1 (effective length factor)
+- $L= 6,288 \ mm$ (length of spreader bar)
+
+Substituting the values:
+
+- $
+P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2} = 92018373.48 \ \mathrm{N} = 9383.26 \ \mathrm{Tons}
+$
+
+
+### Step 4: Comparison
+
+- Calculated compressive force from rigging: $F_c = 75.01$ Tons
+- Critical buckling load: $P_{cr,\text{tons}} = 9383.26$ Tons
+
+Since $F_c \ll P_{cr,\text{tons}}$, the spreader bar is safe against buckling under the given load.
