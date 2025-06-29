@@ -1,115 +1,110 @@
 # Rigging Report
 
-## Lifting Load Calculation
+## 1. Pipe Weight Calculation
 
-The lifting load calculation involves determining the weight of the load and the forces acting on it during lifting. The following formulas and methods were used:
-
-- **Pipe Weight Calculation**:
-
-  $$
-  \text{Weight per Meter} = \text{Outer Diameter} \times \pi \times \text{Thickness} \times 7.85
-  $$
-  $$
-  \text{Weight} = \text{Weight per Meter} \times \text{Length}
-  $$
-
-  The calculated weight of the spreader bar pipe is approximately **2.28 T**.
-
-- **Load at Each Lifting Point**:
-
-  $$
-  L = W \times \left( \frac{d_{t1}}{od_{t1}} \right) \times \left( \frac{d_{t2}}{od_{t2}} \right)
-  $$
-
-## Position of C.O.G
-
-The position of the center of gravity (C.O.G) is crucial for ensuring stability during lifting. The distances from the C.O.G to the lifting points were calculated and used in subsequent load calculations.
-
-## Calculation for Each Lifting Point of the Load Structure
-
-The load at each lifting point was calculated using the formula:
+The weight of the spreader bar pipe is calculated as:
 
 $$
-\text{Load at Lifting Point} = \frac{\text{Weight of Load} \times \text{Distance from C.O.G to Lifting Point}}{\text{Distance from C.O.G to All Lifting Points}}
+\text{Weight per Meter} = \text{Outer Diameter} \times \pi \times \text{Thickness} \times 7.85
 $$
 
-The lifting points and their respective loads are as follows:
-
-- **Lifting Point 1**: 37.5 T
-- **Lifting Point 2**: 37.5 T
-- **Lifting Point 3**: 37.5 T
-- **Lifting Point 4**: 37.5 T
-
-## Tension Calculation
-
-The tension in the slings was calculated using the formula:
-
 $$
+\text{Weight} = \text{Weight per Meter} \times \text{Length}
+$$
+
+The calculated weight of the spreader bar pipe is **2.28 T**.
+
+
+## 2. Position of Center of Gravity (C.O.G)
+
+![alt text](image.png)
+
+The position of the C.O.G is essential for stability. The distances from the C.O.G to each lifting point are used in the load calculations.
+
+## 3. Calculation for Each Lifting Point
+
+The load at each lifting point is:
+
+The load at each lifting point is calculated using  (.eg lifting point 1 and 2):
+
+> - $
+L = W \times \left( \frac{d_{t1}}{od_{t1}} \right) \times \left( \frac{d_{t2}}{od_{t2}} \right)
+$
+> - $
+L1 = 150 \times \left( \frac{5520-2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)
+$
+> - $
+L2 = 150\times \left( \frac{2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)
+$
+
+
+- Lifting Point 1: 43.74 T
+- Lifting Point 2: 41.97 T
+- Lifting Point 3: 31.48 T
+- Lifting Point 4: 32.81 T
+- Lifting Point 5: 76.55 T
+- Lifting Point 6: 73.45 T
+
+## 4. Tension Calculation
+
+The tension in each sling is:
+
+- $
 \text{Tension} = \frac{\text{Load}}{\sin(\theta)}
-$$
+$
 
-The calculated tensions for the slings are:
+- Sling 1: 45.99 T (72°)
+- Sling 2: 44.13 T (72°)
+- Sling 3: 34.20 T (67°)
+- Sling 4: 35.64 T (67°)
+- Sling 5: 82.44 T (63°)
+- Sling 6: 85.91 T (63°)
 
-- **Sling 1**: 39.8 T
-- **Sling 2**: 39.8 T
-- **Sling 3**: 40.5 T
-- **Sling 4**: 40.5 T
 
-## Load at the Padeye of Spreader Bar
+## 5. Compressive Stress on the Spreader Bar
 
-The loads at the padeye of the spreader bar were calculated as follows:
+The compressive stress is:
 
-- **Load at Pu2**: 0.14 T
-- **Load at Pu1**: 0.15 T
-
-## Calculate for the Upper Sling
-
-The tension in the upper slings and the hook load were calculated:
-
-- **Slu2 Tension**: 75.0 T
-- **Slu1 Tension**: 75.0 T
-- **Hook Load**: 150.0 T
-
-## Compressive Stress on the Spreader Bar
-
-The compressive stress acting on the spreader bar was calculated using the formula:
-
-$$
+- $
 \text{Longitudinal Load} = \text{Load} \times \cos(\theta)
-$$
+$
 
-The total compressive stress on the spreader bar is **140.0 T**.
+The total compressive stress on the spreader bar is **75.01 T**.
 
-## Summary
+## 8. Summary Tables
 
-### Lifting Load at 4 Lifting Points of Structure
+### Lifting Load at 4 Lifting Points and Padeye
 
 | Lifting Point | Load (T) |
 | ------------- | -------- |
-| 1             | 37.5     |
-| 2             | 37.5     |
-| 3             | 37.5     |
-| 4             | 37.5     |
+| 1             | 43.74    |
+| 2             | 41.97    |
+| 3             | 31.48    |
+| 4             | 32.81    |
+| Pu 1          | 76.55    |
+| Pu 2          | 73.45    |
 
-### Tension of the 4 Bottom Slings
+### Tension of the Slings
 
-| Sling | Tension (T) |
-| ----- | ----------- |
-| 1     | 39.8        |
-| 2     | 39.8        |
-| 3     | 40.5        |
-| 4     | 40.5        |
+| Sling No. | Tension (T) | Angle (°) |
+| --------- | ----------- | --------- |
+| 1         | 45.99       | 72        |
+| 2         | 44.13       | 72        |
+| 3         | 34.20       | 67        |
+| 4         | 35.64       | 67        |
+| Slu2      | 82.44       | 63        |
+| Slu1      | 85.91       | 63        |
 
 ### Upper Sling and Hook Load
 
 | Component    | Load (T) |
 | ------------ | -------- |
-| Slu2 Tension | 75.0     |
-| Slu1 Tension | 75.0     |
-| Hook Load    | 150.0    |
+| Slu2 Tension | 82.44    |
+| Slu1 Tension | 85.91    |
+| Hook Load    | 159.99   |
 
 ### Compressive Stress on Spreader Bar
 
 | Component                | Stress (T) |
 | ------------------------ | ---------- |
-| Total Compressive Stress | 140.0      |
+| Total Compressive Stress | 75.01      |
