@@ -27,15 +27,9 @@ The load at each lifting point is:
 
 The load at each lifting point is calculated using  (.eg lifting point 1 and 2):
 
-> - $
-L = W \times \left( \frac{d_{t1}}{od_{t1}} \right) \times \left( \frac{d_{t2}}{od_{t2}} \right)
-$
-> - $
-L1 = 150 \times \left( \frac{5520-2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)
-$
-> - $
-L2 = 150\times \left( \frac{2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)
-$
+> - $L = W \times \left( \frac{d_{t1}}{od_{t1}} \right) \times \left( \frac{d_{t2}}{od_{t2}} \right)$
+> - $L1 = 150 \times \left( \frac{5520-2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)$
+> - $L2 = 150\times \left( \frac{2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)$
 
 
 - Lifting Point 1: 43.74 T
@@ -49,9 +43,7 @@ $
 
 The tension in each sling is:
 
-- $
-\text{Tension} = \frac{\text{Load}}{\sin(\theta)}
-$
+- $\text{Tension} = \frac{\text{Load}}{\sin(\theta)}$
 
 - Sling 1: 45.99 T (72°)
 - Sling 2: 44.13 T (72°)
@@ -65,9 +57,7 @@ $
 
 The compressive stress is:
 
-- $
-\text{Longitudinal Load} = \text{Load} \times \cos(\theta)
-$
+- $\text{Longitudinal Load} = \text{Load} \times \cos(\theta)$
 
 The total compressive stress on the spreader bar is **75.01 T**.
 
