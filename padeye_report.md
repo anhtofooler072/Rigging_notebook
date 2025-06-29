@@ -117,29 +117,21 @@ Where:
 
 So,
 
-- $
-I = \frac{\pi}{64} (588^4 - (588-2 \times 25)^4) = 1.75 \times 10^9\ \mathrm{mm}^4
-$
+- $I = \frac{\pi}{64} (588^4 - (588-2 \times 25)^4) = 1.75 \times 10^9\ \mathrm{mm}^4$
 
 ### Step 2: Radius of Gyration
 
-- $
-r = \sqrt{\frac{I}{A}}
-$
+- $r = \sqrt{\frac{I}{A}}$
 
 Where:
 
-- $
-A = \frac{\pi}{4} (D_o^2 - D_i^2)
-$
+- $A = \frac{\pi}{4} (D_o^2 - D_i^2)$
 
 ### Step 3: Euler's Critical Buckling Load
 
 The critical buckling load for a pinned-pinned column:
 
-- $
-P_{cr} = \frac{\pi^2 E I}{(K L)^2}
-$ 
+- $P_{cr} = \frac{\pi^2 E I}{(K L)^2}$ 
 
 Where:
 
@@ -149,9 +141,7 @@ Where:
 
 Substituting the values:
 
-- $
-P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2} = 92018373.48 \ \mathrm{N} = 9383.26 \ \mathrm{Tons}
-$
+- $P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2} = 92018373.48 \ \mathrm{N} = 9383.26 \ \mathrm{Tons}$
 
 
 ### Step 4: Comparison
