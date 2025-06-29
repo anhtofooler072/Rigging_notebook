@@ -61,7 +61,7 @@ The compressive stress is:
 
 The total compressive stress on the spreader bar is **75.01 T**.
 
-## 8. Summary Tables
+## 6. Summary Tables
 
 ### Lifting Load at 4 Lifting Points and Padeye
 
