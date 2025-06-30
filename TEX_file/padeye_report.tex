@@ -215,4 +215,68 @@ P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2}
 \end{itemize}
 Since $F_c \ll P_{cr,\text{tons}}$, the spreader bar is safe against buckling under the given load.
 
+\section{Allowable Axial Compressive Stress (AISC)}
+
+The allowable axial compressive stress $F_a$ is calculated according to the AISC code, depending on the slenderness ratio $KL/r$:
+
+\begin{itemize}
+  \item If $KL/r \leq C_c$:
+  \[
+  F_a = \left[1 - \frac{(KL/r)^2}{2C_c^2}\right] \frac{F_y}{N_d} \left[1 + \frac{9(KL/r)}{40C_c} - \frac{3(KL/r)^3}{40C_c^4}\right]
+  \]
+  \item If $KL/r > C_c$:
+  \[
+  F_a = \frac{\pi^2 E}{1.15 N_d (KL/r)^2}
+  \]
+\end{itemize}
+
+Where:
+\begin{itemize}
+  \item $F_y$ = 345 MPa (yield strength)
+  \item $N_d$ = 4 (safety factor)
+  \item $E$ = 210,000 MPa (Young's modulus)
+  \item $K$ = 1 (effective length factor)
+  \item $L$ = 6,288 mm (length)
+  \item $r$ = 303.5 mm (radius of gyration)
+  \item $C_c = \sqrt{\frac{2\pi^2 E}{F_y}}$
+\end{itemize}
+
+Calculate $KL/r$ and $C_c$:
+\(
+KL/r = \frac{K \cdot L}{r} = \frac{1 \times 6,288}{199.45} = 31.56
+\)\\
+\(
+C_c = \sqrt{\frac{2\pi^2 \times 210,000}{345}} = 109.61
+\)
+
+Since $KL/r < C_c$, use the first formula:
+\[
+F_a = 88.03\ \mathrm{MPa} = 8.80\ \mathrm{MT/m^2}
+\]
+
+\textbf{Applied Compressive Stress Calculation:}
+
+The applied compressive stress is calculated as:
+\[
+F_{\text{app}} = \frac{F}{A_s}
+\]
+Where:
+\begin{itemize}
+  \item $F = 735,596.82\ \mathrm{N}$ (compressive force)
+  \item $A_s = 44,217.92\ \mathrm{mm}^2$ (cross-sectional area)
+\end{itemize}
+So,
+\[
+F_{\text{app}} = \frac{735,596.82}{44,217.92} = 16.64\ \mathrm{MPa}
+\]
+
+The allowable axial compressive stress is $F_a = 88.03$ MPa ($8.80$ MT/m$^2$).
+
+The applied compressive stress from the rigging is:
+\[
+F_{\text{app}} = 16.64\ \mathrm{MPa} = 1.66\ \mathrm{MT/m^2}
+\]
+
+Since $F_{\text{app}} < F_a$, the applied compressive stress is within allowable limits and the spreader bar is safe under the applied compressive load according to AISC.
+
 \end{document}
