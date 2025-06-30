@@ -148,5 +148,3 @@ Substituting the values:
 
 - Calculated compressive force from rigging: $F_c = 75.01$ Tons
 - Critical buckling load: $P_{cr,\text{tons}} = 9383.26$ Tons
-
-Since $F_c \ll P_{cr,\text{tons}}$, the spreader bar is safe against buckling under the given load.
