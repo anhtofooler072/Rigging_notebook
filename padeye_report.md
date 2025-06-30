@@ -78,8 +78,12 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 - Main Plate Thickness: $t = 40\ \mathrm{mm}$
 - Cheek Plate Thickness: $t_c = 30\ \mathrm{mm}$
 - Resisting Area:
-  > $A_{p1} = (R_p - \frac{d}{2}) \times 2t + (R_c - \frac{d}{2}) \times 4t_c
-  = 25,200\ \mathrm{mm}^2$
+
+$$
+A_{p1} = (R_p - \frac{d}{2}) \times 2t + (R_c - \frac{d}{2}) \times 4t_c
+  = 25,200\ \mathrm{mm}^2
+$$
+
 - Shear Stress: $\sigma_s = \frac{F}{A_{p1}} = \frac{843,660}{25,200} = 33.49\ \mathrm{MPa}$
 - Permissible Shear Stress: $\sigma_{s,\text{perm}} = 0.4 \times F_y = 0.4 \times 345 = 138\ \mathrm{MPa}$
 - Check: $33.49\ \mathrm{MPa} < 138\ \mathrm{MPa} \implies \text{PASS}$
@@ -105,9 +109,9 @@ The critical buckling load of the spreader bar is calculated as follows:
 
 The moment of inertia for a hollow circular section:
 
-- $
+$$
 I = \frac{\pi}{64} (D_o^4 - D_i^4)
-$
+$$
 
 Where:
 
@@ -141,7 +145,9 @@ Where:
 
 Substituting the values:
 
-- $P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2} = 92018373.48 \ \mathrm{N} = 9383.26 \ \mathrm{Tons}$
+$$
+P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2} = 92018373.48 \ \mathrm{N} = 9383.26 \ \mathrm{Tons}
+$$
 
 
 ### Step 4: Comparison
