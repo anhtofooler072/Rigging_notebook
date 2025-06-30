@@ -220,7 +220,7 @@ P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2}
 
 \subsection*{Step 4: Comparison}
 \begin{itemize}
-  \item Calculated compressive force from rigging: $F_c = 75.01$ Tons
+  \item Calculated compressive force from rigging: $F_c = 37.43$ Tons
   \item Critical buckling load: $P_{cr,\text{tons}} = 9,383.26$ Tons
 \end{itemize}
 Since $F_c \ll P_{cr,\text{tons}}$, the spreader bar is safe against buckling under the given load.
@@ -247,18 +247,18 @@ Where:
   \item $E$ = 210,000 MPa (Young's modulus)
   \item $K$ = 1 (effective length factor)
   \item $L$ = 6,288 mm (length)
-  \item $r$ = 303.5 mm (radius of gyration)
+  \item $r$ = 199.25 mm (radius of gyration)
   \item $C_c = \sqrt{\frac{2\pi^2 E}{F_y}} \ (eq. \ 3.4)$ 
 \end{itemize}
 
 Calculate $KL/r$ and $C_c$:
-\(
-KL/r = \frac{K \cdot L}{r} = \frac{1 \times 6,288}{199.45} = 31.56
-\)\\
-\(
+\[
+KL/r = \frac{K \cdot L}{r} = \frac{1 \times 6,288}{199.25} = 31.56
+\]
+\[
 C_c = \sqrt{\frac{2\pi^2 \times 210,000}{345}} = 109.61
-\)
-
+\]
+\\
 Since $KL/r < C_c$, use the first formula:
 \[
 F_a = 88.03\ \mathrm{MPa} = 8.80\ \mathrm{MT/m^2}
@@ -272,21 +272,21 @@ F_{\text{app}} = \frac{F}{A_s}
 \]
 Where:
 \begin{itemize}
-  \item $F = 735,596.82\ \mathrm{N}$ (compressive force)
+  \item $F = 367,062.90\ \mathrm{N}$ (compressive force)
   \item $A_s = 44,217.92\ \mathrm{mm}^2$ (cross-sectional area)
 \end{itemize}
 So,
 \[
-F_{\text{app}} = \frac{735,596.82}{44,217.92} = 16.64\ \mathrm{MPa}
+F_{\text{app}} = \frac{367,062.90}{44,217.92} = 8.30\ \mathrm{MPa}
 \]
 
 The allowable axial compressive stress is $F_a = 88.03$ MPa ($8.80$ MT/m$^2$).
 
 The applied compressive stress from the rigging is:
 \[
-F_{\text{app}} = 16.64\ \mathrm{MPa} = 1.66\ \mathrm{MT/m^2}
+F_{\text{app}} = 8.30\ \mathrm{MPa} = 0.83\ \mathrm{MT/m^2}
 \]
 
-Since $F_{\text{app}} < F_a$, the applied compressive stress is within allowable limits and the spreader bar is safe under the applied compressive load according to AISC.
+Since $F_{\text{app}} < F_a$, the applied compressive stress is within allowable limits and the spreader bar is safe under the applied compressive load according to ASME BTH-1 2008.
 
 \end{document}
