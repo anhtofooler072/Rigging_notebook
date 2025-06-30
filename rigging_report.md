@@ -27,7 +27,10 @@ The load at each lifting point is:
 
 The load at each lifting point is calculated using  (.eg lifting point 1 and 2):
 
-> - $L = W \times \left( \frac{d_{t1}}{od_{t1}} \right) \times \left( \frac{d_{t2}}{od_{t2}} \right)$
+$$
+L = W \times \left( \frac{d_{t1}}{od_{t1}} \right) \times \left( \frac{d_{t2}}{od_{t2}} \right)
+$$
+
 > - $L1 = 150 \times \left( \frac{5520-2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)$
 > - $L2 = 150\times \left( \frac{2703}{5520} \right) \times \left( \frac{7000-3000}{7000} \right)$
 
