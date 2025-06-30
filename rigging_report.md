@@ -17,7 +17,7 @@ The calculated weight of the spreader bar pipe is **2.28 T**.
 
 ## 2. Position of Center of Gravity (C.O.G)
 
-![alt text](image.png)
+![alt text](image-3.png)
 
 The position of the C.O.G is essential for stability. The distances from the C.O.G to each lifting point are used in the load calculations.
 
