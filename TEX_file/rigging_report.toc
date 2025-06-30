@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Pipe Weight Calculation}{2}{section.1}%
+\contentsline {section}{\numberline {2}Position of Center of Gravity (C.O.G)}{2}{section.2}%
+\contentsline {section}{\numberline {3}Calculation for Each Lifting Point}{2}{section.3}%
+\contentsline {section}{\numberline {4}Tension Calculation}{3}{section.4}%
+\contentsline {section}{\numberline {5}Compressive Force Calculation from Sling 5 and 6}{3}{section.5}%
+\contentsline {section}{\numberline {6}Summary Tables}{4}{section.6}%

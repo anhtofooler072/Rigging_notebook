@@ -2,16 +2,27 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{geometry}
+\usepackage{geometry}\usepackage{hyperref} % Enables hyperlinks in the document
+
+\hypersetup{
+    colorlinks=true,       % Enable colored links
+    linkcolor=black,        % Color for internal links (e.g., TOC)
+    urlcolor=cyan,         % Color for URLs
+    citecolor=red          % Color for citations
+}
 \geometry{margin=1in}
 
-\title{Rigging Report}
-\author{}
+\title{Rigging Calculation Report}
+\author{Quang Anh To}
 \date{\today}
 
 \begin{document}
 
 \maketitle
+
+\tableofcontents
+
+\pagebreak
 
 \section{Pipe Weight Calculation}
 The weight of the spreader bar pipe is calculated as:
@@ -80,15 +91,6 @@ Total compressive force:
 C_{\text{total}} = C_5 + C_6 = 37.43 + 38.99 = 76.42~\text{T}
 \]
 
-\section{Compressive Stress on the Spreader Bar}
-The compressive stress is the combination of sling 5 and 6 pulling at two ends of the spreader bar:
-\[
-\text{Longitudinal Load} = \text{Load} \times \cos(\theta)
-\]
-
-
-The total compressive stress on the spreader bar is \textbf{75.01 T}.
-
 \section{Summary Tables}
 \subsection*{Lifting Load at 4 Lifting Points and Padeye}
 \begin{center}
@@ -128,7 +130,7 @@ Sling No. & Tension (T) & Angle ($^\circ$) \\
 \hline
 Component & Stress (T) \\
 \hline
-Total Compressive Stress & 75.01 \\
+Total Compressive Stress & 76.42 \\
 \hline
 \end{tabular}
 \end{center}

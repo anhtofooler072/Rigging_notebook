@@ -2,17 +2,27 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{geometry}
+\usepackage{geometry}\usepackage{hyperref} % Enables hyperlinks in the document
+
+\hypersetup{
+    colorlinks=true,       % Enable colored links
+    linkcolor=black,        % Color for internal links (e.g., TOC)
+    urlcolor=cyan,         % Color for URLs
+    citecolor=red          % Color for citations
+}
 \geometry{margin=1in}
 
-\title{Padeye Design Report}
-\author{}
+\title{Padeye and Spreader Bar Design Report}
+\author{Quang Anh To}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
+\tableofcontents
+
+\pagebreak
 \section{Introduction}
 This report summarizes the padeye design checks, including geometric, bearing, and shear stress verifications, using the provided dimensions and material properties. All calculations are shown in plain text and equations for clarity.
 
@@ -23,7 +33,7 @@ This report summarizes the padeye design checks, including geometric, bearing, a
 
 \section{Input Data}
 \begin{itemize}
-  \item Shackle Pin Diameter: $D = 95\ \mathrm{mm}$
+  \item Shackle Pin Diameter: $D = 95\ \mathrm{mm}$ (GreenPin P-6036 WLL: 120 MT)
   \item Shackle Jaw Opening Width: $B = 147\ \mathrm{mm}$
   \item Shackle Inside Length: $H = 329\ \mathrm{mm}$
   \item Sling Diameter: $D_s = 80\ \mathrm{mm}$
@@ -161,7 +171,7 @@ Clearance ($C_2$) & 23.5 mm & 5 -- 20 mm & FAIL \\
 \end{tabular}
 \end{center}
 
-\section{Conclusion}
+\section{Conclusion for padeye}
 All checks except the shackle jaw clearance ($C_2$) are within permissible limits. The clearance between the shackle jaw and the plate exceeds the maximum allowed value and should be reviewed in the design.
 
 \section{Spreader Bar Critical Stress}
@@ -215,18 +225,18 @@ P_{cr} = \frac{\pi^2 \times 210,000 \times 1.75 \times 10^9}{(1 \times 6,288)^2}
 \end{itemize}
 Since $F_c \ll P_{cr,\text{tons}}$, the spreader bar is safe against buckling under the given load.
 
-\section{Allowable Axial Compressive Stress (AISC)}
+\section{Allowable Axial Compressive Stress (ASME BTH-1 2008)}
 
 The allowable axial compressive stress $F_a$ is calculated according to the AISC code, depending on the slenderness ratio $KL/r$:
 
 \begin{itemize}
   \item If $KL/r \leq C_c$:
   \[
-  F_a = \left[1 - \frac{(KL/r)^2}{2C_c^2}\right] \frac{F_y}{N_d} \left[1 + \frac{9(KL/r)}{40C_c} - \frac{3(KL/r)^3}{40C_c^4}\right]
+  F_a = \left[1 - \frac{(KL/r)^2}{2C_c^2}\right] \frac{F_y}{N_d} \left[1 + \frac{9(KL/r)}{40C_c} - \frac{3(KL/r)^3}{40C_c^4}\right] \ (eq. \ 3.3)
   \]
   \item If $KL/r > C_c$:
   \[
-  F_a = \frac{\pi^2 E}{1.15 N_d (KL/r)^2}
+  F_a = \frac{\pi^2 E}{1.15 N_d (KL/r)^2} \ (eq. \ 3.5)
   \]
 \end{itemize}
 
@@ -238,7 +248,7 @@ Where:
   \item $K$ = 1 (effective length factor)
   \item $L$ = 6,288 mm (length)
   \item $r$ = 303.5 mm (radius of gyration)
-  \item $C_c = \sqrt{\frac{2\pi^2 E}{F_y}}$
+  \item $C_c = \sqrt{\frac{2\pi^2 E}{F_y}} \ (eq. \ 3.4)$ 
 \end{itemize}
 
 Calculate $KL/r$ and $C_c$:
