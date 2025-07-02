@@ -1,0 +1,123 @@
+% Spreader Bar Allowable Compressive Stress Comparison
+% Generated July 1, 2025
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{margin=1in}
+\begin{document}
+
+\title{Comparison of Allowable Compressive Stress Solutions: \\ AISC 2005 vs ASME BTH-1 2017}
+\author{Quang Anh To}
+\date{\today}
+\maketitle
+
+\section*{Introduction}
+\noindent This document compares the allowable compressive stress calculations for the spreader bar as performed in \texttt{spreaderbar.ipynb}, following both AISC 2005 and ASME BTH-1 2017 codes. \\
+
+\noindent \textbf{Warning!!} 
+The rigging calculations provide these axial compressive stress checks for the spreader bar neglect the load combinations stipulated in ASCE 7.
+
+\section*{Parameters}
+\begin{itemize}
+    \item Outer diameter ($O_d$): 588 mm
+    \item Thickness ($t$): 25 mm
+    \item Length ($L$): 5520 mm
+    \item Young's modulus ($E$) for S355 steel: 210,000 MPa
+    \item Yield strength ($F_y$) for S355 steel: 345 MPa
+    \item Effective length factor ($K$): 1
+    \item Safety factor ($N_d$): 2 (ASME BTH-1 2017: section 2-2.1)
+\end{itemize}
+
+\section*{ASME BTH-1 2017 Allowable Axial Compressive Stress}
+The code uses a slenderness parameter $KL/r$ and a critical slenderness $C_c$.
+The critical slenderness ratio $C_c$ is given by:
+
+\[
+    C_c = \sqrt{\frac{2\pi^2 E}{F_y}} = \sqrt{\frac{2\pi^2 \cdot 2100000 \ (MPa)}{345 \ (MPa)}} = 109.62
+\]
+
+\begin{itemize}
+    \item For $KL/r \leq C_c$ (eq. 3.3):
+    \begin{equation*}
+        F_a = \left[1 - \frac{(KL/r)^2}{2C_c^2}\right] \frac{F_y}{N_d} \left[1 + \frac{9 KL/r}{40 C_c} - \frac{3 (KL/r)^3}{40 C_c^4}\right] 
+    \end{equation*}
+    \item For $KL/r > C_c$ (eq. 3.5):
+    \begin{equation*}
+        F_a = \frac{\pi^2 E}{1.15 N_d (KL/r)^2} 
+    \end{equation*}
+\end{itemize}
+
+\noindent \textbf{Result from notebook:}
+\begin{itemize}
+    \item $\frac{KL}{r} = 27.71$ then $KL/r < C_c$ 
+    \item Allowable axial compressive stress: $88.24$ MPa 
+    \item Applied compressive stress: $37.43$ MPa
+    \item Conclusion: Applied stress is within allowable limits.
+\end{itemize}
+
+\section*{AISC 2005 Allowable Compressive Stress}
+The code uses the flexural buckling equations (E3-2 and E3-3):
+
+\begin{itemize}
+    \item For $KL/r \leq 4.71\sqrt{E/F_y}$:
+    \begin{equation*}
+        F_{cr} = [0.658^{F_y/F_e}] F_y
+    \end{equation*}
+    \item For $KL/r > 4.71\sqrt{E/F_y}$:
+    \begin{equation*}
+        F_{cr} = 0.877 F_e
+    \end{equation*}
+    \item Where $F_e = \frac{\pi^2 E}{(KL/r)^2}$
+\end{itemize}
+
+\noindent The nominal compressive stress $P_{n}$ is indicated as:
+\[
+P_{n} = F_{cr} A_{g}
+\]
+\begin{itemize}
+    \item Design compressive strength (LRFD): 
+    \begin{equation*}
+        P{u} \le \phi_{c} P_{n}
+    \end{equation*}
+    \item Allowable compressive strength (ASD):
+    \begin{equation*}
+        P{u} \le \frac{P_{n}}{\Omega_{c}}
+    \end{equation*}
+    \item where $\phi_{c} = 0.9$ and $\Omega_{c} = 1.67$ (AISC 2005, chapter E section E1)
+\end{itemize}
+
+\noindent \textbf{Result from notebook:}
+\begin{itemize}
+    \item Slenderness limit $4.71\sqrt{E/F_{y}}$ = 116.21, then we use the equation E3-2 
+    \item Critical stress $F_{cr}$: 327.04 MPa
+    \item Design compressive strength (LRFD): 294.33 MPa
+    \item Allowable compressive strength (ASD): 195.83 MPa
+    \item Applied compressive stress: 37.43 MPa
+    \item Conclusion: Applied stress is within allowable limits.
+\end{itemize}
+
+\section*{Summary Table}
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Code & Allowable Stress (MPa) & Applied Stress (MPa) & Pass/Fail \\
+\midrule
+ASME BTH-1 2017 & 88.24 & 37.43 & Pass \\
+AISC 2005 (ASD) & 195.83 & 37.43 & Pass \\
+% AISC 2005 (LRFD) & 294.33 & 37.43 & Pass \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Discussion}
+The updated calculations show that the AISC 2005 (ASD) code provides a significantly higher allowable compressive stress compared to ASME BTH-1 2017 for the same spreader bar geometry and material. This difference is primarily due to the more conservative safety factors and slenderness criteria in the ASME BTH-1 2017 code. Despite this, the applied compressive stress remains well below the allowable limits in both codes, confirming that the spreader bar design is adequate and safe under the specified loading conditions.
+
+\section*{References}
+\begin{itemize}
+    \item AISC 2005, Specification for Structural Steel Buildings
+    \item ASME BTH-1 2017, Design of Below-the-Hook Lifting Devices
+\end{itemize}
+
+\end{document}
