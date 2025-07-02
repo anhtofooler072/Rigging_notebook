@@ -5,6 +5,14 @@
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{geometry}
+\usepackage{hyperref} % Enables hyperlinks in the document
+
+\hypersetup{
+    colorlinks=true,       % Enable colored links
+    linkcolor=black,        % Color for internal links (e.g., TOC)
+    urlcolor=cyan,         % Color for URLs
+    citecolor=red          % Color for citations
+}
 \geometry{margin=1in}
 \begin{document}
 
@@ -13,13 +21,17 @@
 \date{\today}
 \maketitle
 
-\section*{Introduction}
+\tableofcontents
+
+\pagebreak
+
+\section{Introduction}
 \noindent This document compares the allowable compressive stress calculations for the spreader bar as performed in \texttt{spreaderbar.ipynb}, following both AISC 2005 and ASME BTH-1 2017 codes. \\
 
 \noindent \textbf{Warning!!} 
 The rigging calculations provide these axial compressive stress checks for the spreader bar neglect the load combinations stipulated in ASCE 7.
 
-\section*{Parameters}
+\section{Parameters}
 \begin{itemize}
     \item Outer diameter ($O_d$): 588 mm
     \item Thickness ($t$): 25 mm
@@ -30,7 +42,7 @@ The rigging calculations provide these axial compressive stress checks for the s
     \item Safety factor ($N_d$): 2 (ASME BTH-1 2017: section 2-2.1)
 \end{itemize}
 
-\section*{ASME BTH-1 2017 Allowable Axial Compressive Stress}
+\section{ASME BTH-1 2017 Allowable Axial Compressive Stress}
 The code uses a slenderness parameter $KL/r$ and a critical slenderness $C_c$.
 The critical slenderness ratio $C_c$ is given by:
 
@@ -57,7 +69,7 @@ The critical slenderness ratio $C_c$ is given by:
     \item Conclusion: Applied stress is within allowable limits.
 \end{itemize}
 
-\section*{AISC 2005 Allowable Compressive Stress}
+\section{AISC 2005 Allowable Compressive Stress}
 The code uses the flexural buckling equations (E3-2 and E3-3):
 
 \begin{itemize}
@@ -98,7 +110,7 @@ P_{n} = F_{cr} A_{g}
     \item Conclusion: Applied stress is within allowable limits.
 \end{itemize}
 
-\section*{Summary Table}
+\section{Summary Table}
 \begin{center}
 \begin{tabular}{@{}lccc@{}}
 \toprule
@@ -111,10 +123,10 @@ AISC 2005 (ASD) & 195.83 & 37.43 & Pass \\
 \end{tabular}
 \end{center}
 
-\section*{Discussion}
+\section{Discussion}
 The updated calculations show that the AISC 2005 (ASD) code provides a significantly higher allowable compressive stress compared to ASME BTH-1 2017 for the same spreader bar geometry and material. This difference is primarily due to the more conservative safety factors and slenderness criteria in the ASME BTH-1 2017 code. Despite this, the applied compressive stress remains well below the allowable limits in both codes, confirming that the spreader bar design is adequate and safe under the specified loading conditions.
 
-\section*{References}
+\section{References}
 \begin{itemize}
     \item AISC 2005, Specification for Structural Steel Buildings
     \item ASME BTH-1 2017, Design of Below-the-Hook Lifting Devices
